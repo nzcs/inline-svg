@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+$text-muted: #8094ae !default;
+$text-primary: #01a3ff !default;
+$font-size-base: 1rem !default;
+
+$font-sizes: (
+  1: $font-size-base,
+  2: $font-size-base * 2,
+) !default;
+
+
+@each $name, $value in $font-sizes {
+  .svg-icon-#{$name} {
+    svg {
+      height: $value !important;
+      width: $value !important;
+    }
+  }
+}
+
+.svg-icon {
+  line-height: 1;
+  color: $text-muted;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+.svg-icon-rounded {
+  svg {
+    border-radius: var(--bs-border-radius) !important;
+  }
+}
